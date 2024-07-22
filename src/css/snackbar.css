@@ -1,0 +1,48 @@
+.form {
+  width: 360px;
+  margin-top: 30px;
+}
+input[name='delay'] {
+  height: 40px;
+  outline: none;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+.js-label-delay {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+.js-legend-state {
+  margin-left: 24px;
+}
+fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin: 0;
+  height: 78px;
+  padding: 0;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+button[type='submit'] {
+  text-align: center;
+  width: 360px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background-color: #4e75ff;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+button[type='submit']:hover {
+  background-color: #6c8cff;
+}
