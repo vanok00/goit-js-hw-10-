@@ -25,14 +25,14 @@ function sendForm(event) {
   promise
     .then(() => {
       iziToast.show({
-        message: `OK Fulfilled promise in ${delay}ms`,
+        message: `✅ Fulfilled promise in ${delay}ms`,
         color: '#59a10d',
         position: 'topRight',
       });
     })
     .catch(() => {
       iziToast.show({
-        message: `Rejected promise in ${delay}ms`,
+        message: `❌ Rejected promise in ${delay}ms`,
         color: '#ef4040',
         position: 'topRight',
       });
