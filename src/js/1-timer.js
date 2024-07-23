@@ -1,14 +1,14 @@
 'use strict';
-// calendar library
+
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-// alert library
+
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 //
 const inputEl = document.getElementById('datetime-picker');
-const button = document.querySelector('.div-butt');
+const button = document.querySelector('button');
 button.setAttribute('disabled', '');
 const daysEl = document.querySelector('[data-days]');
 const hoursEl = document.querySelector('[data-hours]');
@@ -21,11 +21,10 @@ let intervalId = null;
 flatpickr('#datetime-picker', {
   enableTime: true,
   time_24hr: true,
-  defaultDate: null,
+  defaultDate: new Date(),
   minuteIncrement: 1,
 
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
     if (selectedDates[0].getTime() > Date.now()) {
       userSelectedDate = selectedDates[0].getTime();
       toggleAttribute(button, false);
@@ -53,10 +52,14 @@ button.addEventListener('click', () => {
   }
   intervalId = setInterval(timer, 1000);
 });
-//
-function timer(intervalId) {
+
+function timer() {
   const currentTime = Date.now();
-  const difference = userSelectedDate - currentTime;
+
+  const choosenDayByUser = new Date(userSelectedDate).getTime();
+
+  const difference = choosenDayByUser - currentTime;
+
   const { days, hours, minutes, seconds } = convertMs(difference);
   daysEl.textContent = addLeadingZero(days);
   hoursEl.textContent = addLeadingZero(hours);
