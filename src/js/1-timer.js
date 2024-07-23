@@ -8,7 +8,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 //
 const inputEl = document.getElementById('datetime-picker');
-const button = document.querySelector('div-butt');
+const button = document.querySelector('.div-butt');
 button.setAttribute('disabled', '');
 const daysEl = document.querySelector('[data-days]');
 const hoursEl = document.querySelector('[data-hours]');
